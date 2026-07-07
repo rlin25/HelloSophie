@@ -60,10 +60,4 @@ A rule the piece holds to, in case you extend it: **her own words are never rewr
 
 ---
 
-## Before it goes public
-
-The contact page opens a conversation — it is deliberately **not** a public solicitation for investment: no terms, no numbers, no call to invest. That framing is intentional and gives you and a lawyer the most room. Publicly inviting strangers toward backing can carry real legal consequences; this is not legal advice, so have counsel review the page before it is live.
-
----
-
 *Sophie is the point. Always.*
