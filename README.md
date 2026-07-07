@@ -22,23 +22,22 @@ The whole thing is one self-contained front end. No backend, no build server, no
 
 | File | What it is |
 |------|------------|
-| `Sophie.dc.html` | The source. The entire experience — markup, logic, and content — lives here. |
-| `support.js` | The small runtime the source depends on. Keep it beside `Sophie.dc.html`. |
-| `Sophie — An Illustration.html` | The bundled **standalone** build: one self-contained file with fonts and logic inlined. Works fully offline. This is what you deploy or hand to someone directly. |
+| `index.html` | The source. The entire experience — markup, logic, and content — lives here. Also the page GitHub Pages serves. |
+| `support.js` | The small runtime the source depends on. Keep it beside `index.html`. |
 
 ---
 
 ## Viewing it
+
+**Live:** https://rlin25.github.io/HelloSophie/
 
 **Locally** — because the source loads a sibling script, serve the folder rather than opening the file over `file://`:
 
 ```bash
 # from the repo root
 python3 -m http.server 8000
-# then open http://localhost:8000/Sophie.dc.html
+# then open http://localhost:8000/
 ```
-
-The standalone build (`Sophie — An Illustration.html`) has no dependencies — open it directly in any browser, online or off.
 
 ---
 
@@ -46,24 +45,18 @@ The standalone build (`Sophie — An Illustration.html`) has no dependencies —
 
 It's a static site. Any static host works (GitHub Pages, Netlify, an S3 bucket, a plain web server).
 
-**GitHub Pages:** push the repo, enable Pages on the default branch, and point people at either `Sophie.dc.html` (needs `support.js` beside it) or the standalone `Sophie — An Illustration.html`. The standalone file is the simplest thing to host — it is complete on its own.
+**GitHub Pages** is already enabled for this repo, serving `index.html` from the `main` branch root at the live link above. On any push to `main`, Pages rebuilds automatically. Keep `support.js` beside `index.html`.
 
 ---
 
 ## Editing content
 
-All of Sophie's words, the faculty glosses, and the copy live inside `Sophie.dc.html`. Two settings are exposed as editable options rather than buried in the markup:
+All of Sophie's words, the faculty glosses, and the copy live inside `index.html`. Two settings are exposed as editable options rather than buried in the markup:
 
 - **Motion** — `static` (typography only), `ambient` (a near-invisible atmosphere), or `field` (the visible field of light that carries the emotional arc). Default: `field`.
 - **Contact** — the builder's name and reply-to email shown on the contact page.
 
 A rule the piece holds to, in case you extend it: **her own words are never rewritten or invented.** Where a real line is absent, that absence is intentional. The dark faces of each faculty are equals of the light ones — never styled as errors or warnings.
-
----
-
-## Rebuilding the standalone file
-
-The standalone build is generated from `Sophie.dc.html` by inlining every dependency (fonts, runtime) into a single HTML file. Regenerate it whenever the source changes, and commit the result so the deployable file stays current.
 
 ---
 
